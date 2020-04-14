@@ -2,7 +2,7 @@
 
 Website: *<https://usf-cs360-spring2020.github.io/project-krmiddlebrook/>*
 
-![Profile Image](src/assets/kai_drawing.jpg)
+![Profile Image](src/assets/kai_drawing.png)
 
 **Name:** Kai Middlebrook  
 **Email:** <krmiddlebrook@dons.usfca.edu>  
