@@ -1,0 +1,318 @@
+<!--
+  Copyright 2018 The Distill Template Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!doctype html>
+
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music Atlas</title>
+
+  <script src="https://distill.pub/template.v2.js"></script>
+  <!-- <script src="template.v2.js"></script> -->
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+      .navbar {
+        background-color: #0E2E3D;
+      }
+
+      .navbar-item {
+        color: #3273dc;
+      }
+
+      .navbar-link {
+        color: #3273dc;
+      }
+    </style>
+    <div class="container">
+      <div class="navbar-brand">
+        <!-- TODO: Change link to repository homepage if needed -->
+        <!-- TODO: Change which navbar-item is-active if needed -->
+        <a class="navbar-item is-active" href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="main-menu" class="navbar-menu has-text-weight-medium">
+        <!-- Left navbar items -->
+        <div class="navbar-start">
+          <!-- The data icon -->
+          <a class="navbar-item" href="dataset.html" title="Data">
+            <span class="icon"><i class="fas fa-table"></i></span>
+            <span>Data</span>
+          </a>
+
+          <!-- prototypes -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Prototype
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map_proto.html" title="Genre Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map_proto.html" title="Playlist Relationships Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlist Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression_proto.html" title="Artist Sound Progression Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- visualizations -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Visualizations
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map.html" title="Genre Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map.html" title="Playlists Relationships Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlists Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression.html" title="Artist Sound Progression Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right navbar items -->
+        <div class="navbar-end">
+          <!-- TODO: Update as needed -->
+          <a class="navbar-item" href="about.html" title="About">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <span>About</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End page navigation -->
+
+  <d-front-matter>
+    <script id='distill-front-matter' type="text/json">
+      {
+        "title": "Music Atlas: Exploring the Musical Universe",
+        "description": "",
+        "published": "April 14, 2020",
+        "authors": [{
+          "author": "Kai Middlebrook",
+          "authorURL": "https://github.com/krmiddlebrook",
+          "affiliations": [{
+            "name": "USF"
+          }]
+        }],
+        "katex": {
+          "delimiters": [{
+            "left": "$$",
+            "right": "$$",
+            "display": false
+          }]
+        }
+      }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="assets/wander_above_the_sea.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg"><figcaption>Wander Above the Sea of Fog</figcaption></a></d-figure>
+    <p>We use music to connect with others, to find solace and comfort in the absence of social support,
+      to focus, to attain a deeper sense of meaning or perspective in life, and to transcend reality. Most of us
+      induce these states by selecting music from a particular style, artist, or track. But today, more music
+      is at our disposal than ever before: approximately 50k new tracks are uploaded to streaming services
+      everyday <d-cite key='ingham_2020'></d-cite>. This vast ocean can be overwhelming: where do you even begin
+      to look for new music?
+      <br></br>
+      A wise boat captain uses a map and compass to navigate the seas. Her map shows what destinations are available
+      and her compass guides her towards the destination she wishs to visit. But can this be translated to music?
+      Yes! Specifically, we can use data visualization techniques to discover and organize both new and familiar musical styles,
+      artists, and tracks! Throughout this site I will be "mapping" music in an effort to make the vast body of musical work on
+      Spotify <d-cite key='spotify'></d-cite> more accesible and enjoyable to navigate.
+    </p>
+  </d-title>
+  <d-byline></d-byline>
+  <d-article>
+    <a class="marker" href="#section-1" id="section-1"><span>1</span></a>
+    <h2>A Brief Introduction to the Music Universe</h2>
+    <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/wd2.jpg" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a
+        href='https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/wd2.jpg'><figcaption>This NASA Hubble Space Telescope image of the cluster Westerlund 2 and its surroundings.</figcaption></a></d-figure>
+    <!-- <figure style="grid-column: page; margin: 1rem 10rem;"><img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/wd2.jpg" style="width:100%; height:50%; border: 1px solid rgba(0, 0, 0, 0.2);" /><figcaption>This NASA/ESA Hubble Space Telescope image of the cluster Westerlund 2 and its surroundings</figcaption></figure> -->
+
+    <p>One of the few constants across all cultures is music: it transcends time, location, language, wealth, social status, and more.
+      Research suggests that people spend between 15% and 25% of their waking lives listening to music <d-cite key="musicalPrefFricke"></d-cite>.
+      What's more, numerous studies show that music has immediate effects on cognition, affect, and the brain <d-cite key='roleOfMusicRentfrow,chanda2013neurochemistry'></d-cite>
+    </p>
+    <p>
+      In the prelude, I mention that music streaming services upload approximately 50k new tracks every day <d-cite key='ingham_2020'></d-cite>.
+      Naturally, we might think this would resolve the "stale playlist problem" <d-footnote>
+        Have you ever created a playlist you absolutely loved that eventually got boring? If so, then you've experienced the "stale playlist problem".
+        It can occur when you listen to the same tracks you love over and over again, causing your tracks to "go stale".
+        The stale playlist problem is common in the modern music streaming era.</d-footnote>. But, inintuitively, this is not the case: the sheer size of
+      music streaming databases can be overwhelming. Where do you begin to look for new artists/albums/tracks without spending a considerable amount of
+      time sorting through the noise? Is this even possible? It probably feels like it isn't if you don't know the scope of the music space you're in.
+      This is where "Music Atlas" can be useful: it enables you to visualize the music universe <d-footnote>My hope is that Music Atlas enables you to discover "musical galaxies" that interest you </d-footnote>.
+    </p>
+
+    <h2>What is music?</h2>
+    <p>Fundementally, music is a combination of sounds, and sound is vibration <d-footnote>
+        <d-figure style="grid-column: block; margin: 0rem 0rem;"><img src="https://i.ytimg.com/vi/nSo6WlGk5jw/maxresdefault.jpg" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a
+            href='https://i.ytimg.com/vi/nSo6WlGk5jw/maxresdefault.jpg'>Examples of sound waves seen in music.</a></d-figure>
+      </d-footnote>. One of the most succinct definitions of music comes from the Italian composer Ferruccio Busoni, who said, "Music is sonorous air."
+      What's remarkable is that combinations of these simple vibration, which are invisible to the human eye, can facilitate a deeply rich emotional experience, alter perception and consciousness, and induce ecstatic states of being <d-cite
+        key='greenberg_2016'></d-cite>.
+    </p>
+    <aside>"One of the really fascinating things about music is that technically&#8288;—&#8288;in a very literal way&#8288;—&#8288;it doesn’t exist. A painting, a sculpture or a photograph can physically exist, while music is just air hitting the
+      eardrum in a slightly different way than it would randomly." &#8288;—&#8288;MOBY <d-cite key='shah_roleOfMusic2017'></d-cite>
+    </aside>
+
+    <p>There are countless ways to combine "sonorous air" to create a musical piece <d-footnote>Within the scope of Western popular music, a few ambitious researcher have tried to count or create all possible melody combinations (exlcuding rhythmic
+        differences) <d-cite key='binder_everymelody2020,allain_howManyDiffSongs2017'></d-cite>
+      </d-footnote>.
+      If every piece were unique&#8288;—&#8288;sharing no similarities in melody, rhythm, timbre, and pitch with any other piece&#8288;—&#8288;we would have a much more difficult time discovering and organizing music.
+      Fortunately, common features emerge: sets of tracks may share rhythmic, timbre, pitch, or lyrical themes. We can use these shared themes to create music ontologies and taxonomies <d-footnote>Ontologies and taxonomies are in many ways similar:
+        they describe types of things, and are arranged in a hierarchical structure. The way they differ is in their level of formality of their semantic relationships: taxonomies tend to relate classes using only is_a: kidney is_a organ is_a
+        anatomical structure whereas ontologies use a more expressive set of pre-defined relationships such as part_of, develops_from, etc.<d-cite key='buccini_TaxonomyVsOntology2020'></d-cite>
+      </d-footnote>
+    </p>
+
+    <h2>Music Ontologies & Taxonomies</h2>
+    <p>Music is often organized in an ontological or taxonomical structure. These structures will never perfectly describe music. Just like any language is inadequate to express emotions, so are ontologies/taxonomies imperfect tools to describe
+      music.
+      Yet, they are still far better than nothing, and very useful when they are designed well. The most common and well-known approach is to organize music through genre ontologies/taxonomies <d-cite
+        key='tzanetakis_2002MusicalGC,tao_genreClass2005,Sturm2014TheSO'></d-cite>.
+    </p>
+    <h3>The Definition of Music Genre</h3>
+    <p>
+      The traits that define a genre are more than a similar sound or summary of technical elements: subculture, fashion, geography, mentality and period of time all qualify as possible characterists of which a genre might be recognized <d-cite
+        key='alfonso_encyclopediaOfMusic2004,fabbri_musicGenre1982,crauwels_MusicMap2020'></d-cite>.
+      We can think of music genres as galaxies existing in the "musical universe". Of course, this universe doesn't really exist&#8288;—&#8288;if it did, I'd be there! But, I find this metaphor helpful to understand music ontologies/taxonomies.
+    </p>
+    <p>
+      Astronomers describe the Universe using a hierarchical structure with several levels: I follow a similar approach to explain the musical universe.
+      The first significant level is the "genre galaxy," represented by a common denominator among a "large enough" <d-footnote>What is large enough? There is no right or wrong answer: it depends on who you ask.</d-footnote> group of music (not
+      necessarily artists) connected by specific instrumentation, style, mentality/ideology, sound, place and/or time.
+      Next, there is the "genre galaxy cluster," represented by a group/cluster of genre galaxies that share a common denominator. Beyond the scale of genre galaxy clusters, there is the "genre-supercluster," consisting of several galaxy clusters and
+      groups bound to one another by, you guessed it, a common denominator.
+    </p>
+    <p>
+      The unresolved question is whether there are even larger structures that lie somewhere in between genre-superclusters and the musical universe as a whole. But for this work, I think it is safe to consider genre-superclusters as the
+      second-highest level in the hierarchy.
+    </p>
+
+    <h2>The Hitchhiker's Guide to the Music Atlas</h2>
+    <p>Music Atlas comes with three <d-footnote>The number of visualizations may change as the project matures.</d-footnote> "maps":
+      <ul>
+          <li><a href="genre_map.html"><span>Genre Map</span></a></li>
+          <li><a href="playlist_map.html"><span>Playlist Relationship Map</span></a></li>
+          <li><a href="artist_dev.html"><span>Artist Sound Progression Map</span></a></li>
+          <!-- <li><a href="audio_features.html"><span>Audio Feature Map</span></a></li> -->
+      </ul>
+    </p>
+    <p>
+      The <a href="genre_map.html"><span>Genre Map</span></a> provides a "bird's eye view" of the music universe. This is the broadest map and most ambitious visualization in Music Atlas.
+      The <a href="playlist_map.html"><span>Playlist Relationships Map</span></a> portrays relationships between popular playlists on Spotify. This map also represents the music universe at a high level, albiet to a lesser degree than the <a href="genre_hierarchy.html">Genre Map</a>.
+      The <a href="artist_dev.html"><span>Artist Sound Progression Map</span></a> visualizes how an artist's sound changes over the course of their career.
+    </p>
+  </d-article>
+
+  <d-appendix>
+    <h3>Acknowledgments</h3>
+    <p>
+        I am grateful to <a href="https://colah.github.io/">Chris Olah</a> and the rest of the <a href="https://distill.pub/"> Distill Pub</a> team for there insightful blog posts. Also, a big thank you to <a href="https://sjengle.cs.usfca.edu/">Sophie Engle</a> for formally introducing me to data visualization.
+    </p>
+    <h3>Contributions</h3>
+    <p>
+      Work was complete by Kai unless noted otherwise.
+    </p>
+    <p>
+      <b>Concepts & Writting:</b> Kai introduced and wrote the central concept and structure of this article.
+    </p>
+    <p>
+      <b>Figures & Code:</b> Some figures were drafted in <a href="rawgraphs.io">RawGraphs</a>. For all figures, the final version was implemented in <a href="https://d3js.org/">D3</a>. All code was written by Kai.
+    </p>
+    <h3>Reviewers</h3>
+    <p>Some text with links describing who reviewed the article.</p>
+
+    <d-bibliography src="bibliography.bib"></d-bibliography>
+  </d-appendix>
+
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <!-- TODO: Change to link to your Github repository -->
+        <a href="https://github.com/krmiddlebrook" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+</body>

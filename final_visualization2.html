@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Persimmon</title>
+
+    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+    <!-- https://bulma.io/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <!-- Load Font Awesome 5 (free) icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <!-- include d3.js v5 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- include d3.js modules -->
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script src="d3-tip.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="kai_style.css">
+
+  </head>
+
+  <body>
+
+  <!-- Page header -->
+  <!-- https://bulma.io/documentation/layout/hero/ -->
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Persimmon</h1>
+        <h2 class="subtitle">Welcome to the home of team Persimmon's data visualization midterm project!</h2>
+      </div>
+    </div>
+  </section>
+  <!-- End page header -->
+
+  <!-- Page navigation -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <!-- TODO: Change link to repository homepage if needed -->
+        <!-- TODO: Change which navbar-item is-active if needed -->
+        <a class="navbar-item is-active" href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="main-menu" class="navbar-menu has-text-weight-medium">
+          <!-- Left navbar items -->
+          <div class="navbar-start">
+            <!-- The data icon -->
+            <a class="navbar-item" href="dataset.html" title="Data">
+              <span class="icon"><i class="fas fa-table"></i></span>
+              <span>Data</span>
+            </a>
+            
+          <!-- prototypes -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Prototype
+            </a>
+            <div class="navbar-dropdown">
+              <a class = "navbar-item" href = "visualization1.html" title = "Prototype 1">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Prototype 1</span>
+              </a>
+              <a class = "navbar-item" href = "visualization2.html" title = "Prototype 2">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Prototype 2</span>
+              </a>
+              <a class = "navbar-item" href = "visualization3.html" title = "Prototype 3">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Prototype 3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- visualizations -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Visualizations
+            </a>
+            <div class="navbar-dropdown">
+              <a class = "navbar-item" href = "final_visualization1.html" title = "Prototype 1">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Visualization 1</span>
+              </a>
+              <a class = "navbar-item" href = "final_visualization2.html" title = "Visualization 2">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Visualization 2</span>
+              </a>
+              <a class = "navbar-item" href = "final_visualization3.html" title = "Visualization 3">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Visualization 3</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right navbar items -->
+        <div class="navbar-end">
+          <!-- TODO: Update as needed -->
+          <a class="navbar-item" href="about.html" title="About">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <span>About</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End page navigation -->
+
+  <section class="section">
+    <div class="container">
+      <!-- Begin page content -->
+      <div class="content">
+        <h1 class="title">
+          Visualization 2
+        </h1>
+
+        <h4>Artist: Kai Middlebrook</h4>
+        <p> This prototype aligns with the theme of assessing the response time by neighborhoods of the SF Fire Department.
+          The heatmap displays the average normalized difference between the dispatch time and on scene time. The visualization
+          indicates that units on scene time for calls related to fire in neighborhoods such as Glen Park and Lone Mountain/USF
+          have the largest average normalized difference. In other words, if there is a fire in either of these neighborhoods you
+          can expect fire units to arrive later than the average on scene time. A number of factors may influence the on scene time
+          such as the distance between an available fire station and the call location, accessibility of the location, etc. Both of these
+          neighborhoods are very compact and located on or near hills, which may be the reason for long on scene time wait times.
+        </p>
+        <h4>Data Wrangling</h4>
+        <p>This data was created on top of our dataset (<a href = "FireDepartmentCallsSelected.csv"> FireDepartmentCallsSelected.csv </a>).
+          This new dataset excludes all rows with missing data (approximately 19%). In addition, 6 new columns were added:
+          diff_received_to_onScene, diff_dispatch_to_onScene, diff_response_to_onScene, norm_diff_received_to_onScene, norm_diff_dispatch_to_onScene norm_diff_response_to_onScene. The columns containing diff_* calculated the difference between the on scene time and a response time metric
+          (i.e. received, dispatch, response). Then the data was filtered to exclued all rows were the on scene time was before the response time metric (approximately ~0.01%). Finally, the norm_diff_* columns were created. Each of these columns contains the normalized difference between on scene time and the respective response metric. The dataset can be found here: <a href="FireDepartmentCallsSelectedNAFilteredWithDiffs.csv">Filtered and Normalized Fire Data</a>. The code to reproduce this dataset is available as a jupyter notebook:
+          <a href="https://github.com/usf-cs360-spring2020/midterm-persimmon/blob/gh-pages/data_wrangling_kai.ipynb">Filtered and Normalized Fire Data Notebook</a>.
+        </p>
+        <h4>Planned Interactivity</h4>
+        <p> When the mouse hovers over a cross-section of the heatmap, the user will see a nice table of 3 values:
+          neighborhood, call type group, and the average normalized difference between dispatch time and on scene time.
+        </p>
+
+        <!-- D3 version -->
+        <div id="heatmap"></div>
+        <div id="nav-container">
+          <div class="nav left">previous</div>
+            <div id="locationDropdown"></div>
+          <div class="nav right">next</div>
+          <div class="buttons"></div>
+          <br />  
+        </div>
+        <div id='barcharts'></div>
+
+        <script src="heatmap_kai.js"></script>
+      </div>
+      <!-- End page content -->
+    </div>
+  </section>
+  <!-- Page footer -->
+  <!-- https://bulma.io/documentation/layout/footer/ -->
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <b>Acknowledgements:<b>
+          <br>
+        <a href="https://github.com/usf-cs360-spring2020/midterm-persimmon" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+  </script>
+  <!-- End mobile menu responsiveness -->
+  </body>
+</html>

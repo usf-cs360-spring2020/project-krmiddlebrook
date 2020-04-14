@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music Atlas</title>
+
+  <script src="https://distill.pub/template.v2.js"></script>
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+      .navbar {
+        background-color: #0E2E3D;
+      }
+
+      .navbar-item {
+        color: #3273dc;
+      }
+
+      .navbar-link {
+        color: #3273dc;
+      }
+    </style>
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="main-menu" class="navbar-menu has-text-weight-medium">
+        <!-- Left navbar items -->
+        <div class="navbar-start">
+          <!-- The data icon -->
+          <a class="navbar-item" href="dataset.html" title="Data">
+            <span class="icon"><i class="fas fa-table"></i></span>
+            <span>Data</span>
+          </a>
+
+          <!-- prototypes -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Prototype
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map_proto.html" title="Genre Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map_proto.html" title="Playlist Relationships Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlist Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression_proto.html" title="Artist Sound Progression Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- visualizations -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Visualizations
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map.html" title="Genre Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map.html" title="Playlists Relationships Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlists Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression.html" title="Artist Sound Progression Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right navbar items -->
+        <div class="navbar-end">
+          <!-- TODO: Update as needed -->
+          <a class="navbar-item" href="about.html" title="About">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <span>About</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End page navigation -->
+
+  <!-- <section class="section"> -->
+  <d-article>
+    <!-- <div class="container"> -->
+    <!-- Begin page content -->
+    <h2 style='text-align: center;'>Spotify Data</h2>
+
+    <p>The Music Atlas is based entirely off of Spotify data <d-cite key='spotify'></d-cite>. Three separate, but related, sets of data were collected. The first set of data collected information about Spotify curated playlists, the second set
+      gathered artist-level data, and the third set collected a wider range of playlist data by removing the Curated by Spotify constraint.
+      All data was collected and accessed through Spotify's public API between March 20th and April 14th. To use Spotify's API, you will need an access token, which can be acquired by creating a
+      <a href="https://developer.spotify.com/">Spotify Developer Account <d-cite key='spotify_for_developers_2020'></d-cite></a>.
+      The data I collected is available here: <a href="#">Spotify Data for the Music Atlas (under construction)</a>.
+    </p>
+
+    <!-- Data License -->
+    <blockquote>
+      <p>
+        "License to Developer. Subject to and conditional upon your compliance at all times with these Developer Terms, particularly the limitations in Section IV below, Spotify grants to you a limited, non-exclusive, non-transferable,
+        non-sublicensable, revocable right during the Term (as defined in Section IX.10)...". For non-streaming SDAs (e.g., Music Atlas) Spotify Grants permission to develop and distribute Non-Streaming SDAs that comply with the Branding Guidelines
+        for use with the Spotify Service.<d-cite key='spotify_for_developers_terms2020'></d-cite>".
+      </p>
+    </blockquote>
+
+    <p>
+      Overview of the data:<br />
+    <div class="tags is-centered">
+      <span class="tag is-info is-medium">Total Combined Rows: &nbsp;<b>~2.5mil</b></span>
+      <span class="tag is-info is-medium">Data is updated:&nbsp;<b>Daily</b> </span>
+    </div>
+    </p>
+
+    <div class="table-container">
+      <table class="table is-hoverable">
+        <!-- the top row of data table -->
+        <thead>
+          <!-- the column names -->
+          <tr>
+            <th>#</th>
+            <th>Dataset</th>
+            <th>Description</th>
+            <th>size (# rows)</th>
+            <th>Relevant Columns</th>
+            <th>Relevant Visualization(s)</th>
+          </tr>
+        </thead>
+        <!-- Body of the rest of the data table -->
+        <tbody>
+          <!-- Rows -->
+          <tr>
+            <!-- Row 1 -->
+            <!-- th = bold font, td = not bold font -->
+            <th>1</th>
+            <td>Genre Dataset</td>
+            <td>Track-level metadata from popular Spotify Curated Genre Playlists</td>
+            <td>~822k</td>
+            <td>track_id, album_id, artist_id, track_audio_features, genre</td>
+            <td><a href="genre_map.html"><span>Genre Map</span></a>
+              <a href="playlist_map.html"><span>Playlist Relationship Map</span></a>
+            </td>
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <th>2</th>
+            <td>Playlist Dataset</td>
+            <td>Track-level metadata from popular playlists on Spotify. Note, this is not the same as the Genre Dataset because we aren't requiring the playlist to be a Spotify Curated Playlist.</td>
+            <td>~1.67mil</td>
+            <td>playlist_id, track_id, artist_id, track_audio_features</td>
+            <td><a href="genre_map.html"><span>Genre Map</span></a>
+              <a href="playlist_map.html"><span>Playlist Relationship Map</span></a>
+            </td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Artist Dataset</td>
+            <td>Track and Album-level metadata for a small set of hand picked artists.</td>
+            <td>~1k</td>
+            <td>artist_id, track_id, album_id, track_audio_features, release_date</td>
+            <td><a href="artist_dev.html"><span>Artist Sound Progression Map</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- End page content -->
+  </d-article>
+  </div>
+
+  <div>
+    <!-- Page appendix -->
+    <d-appendix>
+      <h3>Acknowledgments</h3>
+      <p>
+        I am grateful to <a href="https://colah.github.io/">Chris Olah</a> and the rest of the <a href="https://distill.pub/"> Distill Pub</a> team for there insightful blog posts. Also, a big thank you to <a
+          href="https://sjengle.cs.usfca.edu/">Sophie Engle</a> for formally introducing me to data visualization.
+      </p>
+      <h3>Contributions</h3>
+      <p>
+        Work was complete by Kai unless noted otherwise.
+      </p>
+      <p>
+        <b>Concepts & Writting:</b> Kai introduced and wrote the central concept and structure of this article.
+      </p>
+      <p>
+        <b>Figures & Code:</b> Some figures were drafted in <a href="rawgraphs.io">RawGraphs</a>. For all figures, the final version was implemented in <a href="https://d3js.org/">D3</a>. All code was written by Kai.
+      </p>
+      <h3>Reviewers</h3>
+      <p>Some text with links describing who reviewed the article.</p>
+
+      <d-bibliography src="bibliography.bib"></d-bibliography>
+    </d-appendix>
+  </div>
+  <!-- Page footer -->
+  <!-- https://bulma.io/documentation/layout/footer/ -->
+  <section></section>
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <b>Acknowledgements:<b>
+            <br>
+            <a href="https://github.com/usf-cs360-spring2020/midterm-persimmon" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+              <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+            </a>
+
+            <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+              <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+            </a>
+
+            <a href="https://bulma.io" class="button is-small">
+              <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+  <!-- End mobile menu responsiveness -->
+</body>
+
+</html>

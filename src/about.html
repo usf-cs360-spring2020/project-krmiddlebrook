@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2018 The Distill Template Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!doctype html>
+
+<html>
+
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music Atlas</title>
+
+  <script src="https://distill.pub/template.v2.js"></script>
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+      .navbar {
+        background-color: #0E2E3D;
+      }
+
+      .navbar-item {
+        color: #3273dc;
+      }
+
+      .navbar-link {
+        color: #3273dc;
+      }
+    </style>
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-active" href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="main-menu" class="navbar-menu has-text-weight-medium">
+        <!-- Left navbar items -->
+        <div class="navbar-start">
+          <!-- The data icon -->
+          <a class="navbar-item" href="dataset.html" title="Data">
+            <span class="icon"><i class="fas fa-table"></i></span>
+            <span>Data</span>
+          </a>
+
+          <!-- prototypes -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Prototype
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map_proto.html" title="Genre Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map_proto.html" title="Playlist Relationships Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlist Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression_proto.html" title="Artist Sound Progression Map Prototype">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- visualizations -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Visualizations
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="genre_map.html" title="Genre Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Genre Map</span>
+              </a>
+              <a class="navbar-item" href="playlist_relationships_map.html" title="Playlists Relationships Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Playlists Relationships Map</span>
+              </a>
+              <a class="navbar-item" href="artist_sound_progression.html" title="Artist Sound Progression Map">
+                <span class="icon"><i class="fas fa-paint-brush"></i></span>
+                <span>Artist Sound Progression Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right navbar items -->
+        <div class="navbar-end">
+          <!-- TODO: Update as needed -->
+          <a class="navbar-item" href="about.html" title="About">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <span>About</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End page navigation -->
+
+  <d-article>
+    <!-- <a class="marker" href="#section-1" id="section-1"><span>1</span></a> -->
+    <h2 style="text-align: center">A Brief Introduction to Me</h2>
+    <!-- <figure style="grid-column: page; margin: 1rem 5rem;"><img src="assets/kai_drawing.png" style="width:100%; height:50%; border: 1px solid rgba(0, 0, 0, 0.2);" /></figure> -->
+
+    <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="assets/kai_drawing.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" />
+        <figcaption>This is a drawing I made of myself.</figcaption>
+      </a></d-figure>
+
+    <div class="media-content">
+      <div>
+        <p>
+          <ul>
+            <li><b>Kai Middlebrook</b></li>
+            <li><b>Affiliation: </b><a href="https://www.usfca.edu/">University of San Francisco (USF)</a></li>
+            <li><b>Major: </b> Data Science (May 2020) </li>
+            <li><b>Email: </b><a href="mailto:krmiddlebrook@usfca.edu">krmiddlebrook@usfca.edu</a></li>
+            <li><b>Interests: </b>Deep Learning, Music and Machine Learning, Neuroscience, Psychology, Sociology, History, Music Production</li>
+        </ul>
+        <div class="heading">Skills</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Data Engineering</span>
+            <span class="tag">Data Mining</span>
+            <span class="tag">SQL</span>
+            <span class="tag">R</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class='columns'>
+            <div class="column is-one-fifth">
+              <a href="https://github.com/krmiddlebrook" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+                <i class="fab fa-github-alt"></i>&nbsp;<strong> Github</strong>
+              </a>
+            </div>
+            <div class="column is-one-fifth">
+              <a href="https://twitter.com/kai_middlebrook" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+                <i class="fab fa-twitter"></i>&nbsp;<strong>Twitter</strong>
+              </a>
+            </div>
+            <div class="column is-one-fifth">
+              <a href="https://www.linkedin.com/in/kaimiddlebrook/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+                <i class="fab fa-linkedin"></i>&nbsp;<strong>LinkedIn</strong>
+              </a>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+
+    <h2>Why I Chose Music Data?</h2>
+    <p>I'm the type of person who is always listening to music: whether I'm working, commuting, excersing, etc.
+      I always have Spotify up and my favorite tunes on. Creating a data visualization project based around my
+      love for music just felt right. In addition, I've worked on Music Information Retrieval (MIR) researcher
+      problems for the past two years. This work required me to learn the ins and out of music from a much more technical
+      perspective: from organizing large-scale music collections, to music recommendation systems, to automatically identifying
+      sematic tags from music audio. I used these experience and my newfound understanding of data visualization to create the Music Atlas.
+    </p>
+  </d-article>
+
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <!-- TODO: Change to link to your Github repository -->
+        <a href="https://github.com/krmiddlebrook" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
