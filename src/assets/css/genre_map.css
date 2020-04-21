@@ -1,0 +1,39 @@
+/* source: http://bl.ocks.org/sjengle/f6f522f3969752b384cfec5449eacd98 */
+
+
+svg {
+  background-color: #252525;
+  border: 0.5px dotted #626262;
+}
+
+a {
+  color: #3EB5C4;
+}
+
+b {
+  font-weight: 900;
+}
+
+.node {
+  stroke: silver;
+  stroke-width: 1px;
+}
+
+.link {
+  /* fill: none; */
+  stroke: silver;
+  stroke-opacity: 0.8;
+}
+
+.selected {
+  stroke: red !important;
+  stroke-opacity: 1;
+}
+
+/* shadow trick from bl.ocks.org */
+#tooltip {
+  font-size: 10pt;
+  font-weight: 900;
+  fill: white;
+  text-shadow: 1px 1px 0 #252525, 1px -1px 0 #252525, -1px 1px 0 #252525, -1px -1px 0 #252525;
+}

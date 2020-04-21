@@ -18,7 +18,7 @@ with open("spotify_keys.json", "r") as fp:
 
 
 SPOTIPY_REQUESTS_TIMEOUT = 15
-# create spotipy clients 
+# create spotipy clients
 SPOTIPY_CLIENTS = []
 for creds in SPOTIPY_CREDS:
     cm = SpotifyClientCredentials(

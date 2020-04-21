@@ -25,6 +25,15 @@
   <!-- <script src="template.v2.js"></script> -->
   <!-- Load Font Awesome 5 (free) icons -->
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!-- d3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- local scripts -->
+  <script src="assets/js/helpers.js"></script>
+  <script src='assets/js/hover.js'></script>
+
+
 </head>
 
 <body>
@@ -126,20 +135,28 @@
 
   <d-title>
     <h1>The Genre Map</h1>
+    <d-figure class='l-screen-inset'>
+      <link rel="stylesheet" href='assets/css/genre_map.css'></link>
+      <div id='genre_proto' style='margin: auto;'></div>
+    </d-figure>
+    <script src='assets/js/genre_map.js'></script>
 
-    <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="assets/wander_above_the_sea.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a
+    <!-- <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="assets/images/wander_above_the_sea.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a
         href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg">
         <figcaption>Wander Above the Sea of Fog</figcaption>
-      </a></d-figure>
+      </a></d-figure> -->
   </d-title>
   <d-byline></d-byline>
 
   <d-article>
     <a class="marker" href="#section-1" id="section-1"><span>1</span></a>
     <h2>Genre Distribution</h2>
-    <d-figure style="grid-column: middle; margin: 1rem 10rem;"><img src="assets/top_50_genres.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" />
+    <!-- <d-figure style="grid-column: middle; margin: 1rem 10rem;"><img src="assets/top_50_genres.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" />
       <figcaption>The top 50 genres based on the number of tracks represent by each genre in our dataset.</figcaption>
-    </d-figure>
+    </d-figure> -->
+
+
+
     <p>
       In the prelude, I mention that music streaming services upload approximately 50k new tracks every day <d-cite key='ingham_2020'></d-cite>.
       Naturally, we might think this would resolve the "stale playlist problem" <d-footnote>
