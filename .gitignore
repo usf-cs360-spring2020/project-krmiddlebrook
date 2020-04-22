@@ -1,9 +1,6 @@
 .ipynb_checkpoints/
 
-assets/data/*.csv
-assets/data/genre_network/*.json
-assets/data/*.h5
-assets/data/*.parquet
-
+assets/data/*
+!assets/data/genre_network/top100-filtered-reduced.json
 
 scripts/spotify_keys.json
