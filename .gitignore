@@ -1,9 +1,9 @@
 .ipynb_checkpoints/
 
-src/assets/data/*.csv
-src/assets/data/genre_network/*.json
-src/assets/data/*.h5
-src/assets/data/*.parquet
+assets/data/*.csv
+assets/data/genre_network/*.json
+assets/data/*.h5
+assets/data/*.parquet
 
 
 scripts/spotify_keys.json

@@ -1,16 +1,27 @@
 /* source: http://bl.ocks.org/sjengle/f6f522f3969752b384cfec5449eacd98 */
 
 
-svg {
+d-figure svg {
   background-color: #252525;
   border: 0.5px dotted #626262;
+  /* min-width: 500px; */
+  min-height: 800px;
+  max-height: 1080px;
+  /* flex-basis: 100%; */
+  width: 100%;
+  /* height: 100%; */
 }
 
-a {
+/* d-figure svg g#plot {
+  width: auto;
+  height: 700px;
+} */
+
+d-figure a {
   color: #3EB5C4;
 }
 
-b {
+d-figure b {
   font-weight: 900;
 }
 
@@ -22,7 +33,7 @@ b {
 .link {
   /* fill: none; */
   stroke: silver;
-  stroke-opacity: 0.8;
+  stroke-opacity: 0.6;
 }
 
 .selected {

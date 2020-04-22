@@ -1,0 +1,16 @@
+.navbar {
+  /* background-color: #0E2E3D; */
+  background-color: #183f52;
+}
+
+.navbar-item {
+  color: #fafafa;
+}
+
+.navbar-link {
+  color: #fafafa;
+}
+
+.navbar-dropdown .navbar-item {
+  color: #183f52;
+}
