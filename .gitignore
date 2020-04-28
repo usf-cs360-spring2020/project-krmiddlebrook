@@ -2,5 +2,6 @@
 
 assets/data/*
 !assets/data/genre_network/top100-filtered-reduced.json
+!assets/data/genre_network/top100-filtered.json
 
 scripts/spotify_keys.json

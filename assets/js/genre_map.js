@@ -17,7 +17,8 @@ const r = 2; // node radius
 const radial = (Math.min(w, h) / 2) - (2 * r);
 
 const scales = {
-  color: d3.scaleOrdinal().range(d3.schemeSet3),
+  // color: d3.scaleOrdinal(d3.schemeCategory20c).range(50),
+  color: d3.scaleSequential(d3.interpolateRdYlBu),
   radius: d3.scaleSqrt().range([2, 12]),
   stroke: d3.scaleSqrt().range([1, 8])
 };
@@ -98,7 +99,9 @@ function initializeDisplay(data) {
   // update scales
   let genres = graph.nodes.filter(d => d.type == 'genre');
 
-  scales.color.domain(d3.extent(genres, v => v.id));
+  // scales.color.domain(d3.extent(genres, v => v.id));
+  scales.color.domain([0, d3.max(genres, v => v.degree)]);
+
 
   // scales.color.domain(d3.extent(graph.nodes, v => v.degree));
   scales.radius.domain(d3.extent(graph.nodes, v => v.degree));
@@ -167,7 +170,7 @@ function initializeDisplay(data) {
     .attr('r', v => scales.radius(v.degree))
     .attr('cx', v => v.x)
     .attr('cy', v => v.y)
-    .attr('fill', v => (v.type === 'genre') ? scales.color(v.id) : 'gray')
+    .attr('fill', v => (v.type === 'genre') ? scales.color(v.degree) : 'gray')
     .call(drag(simulation));
 
   // setup node tooltips

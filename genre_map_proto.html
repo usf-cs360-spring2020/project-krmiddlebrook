@@ -124,17 +124,6 @@
     <h1 style='text-align: center;'>The Genre Map</h1>
   </d-title>
 
-  <!-- <d-figure class='l-screen-inset'>
-    <link rel="stylesheet" href='assets/css/genre_map.css'></link>
-    <div id='genre_proto' style='margin: auto;'></div>
-  </d-figure>
-  <script src='assets/js/genre_map.js'></script> -->
-
-    <!-- <d-figure style="grid-column: page; margin: 1rem 10rem;"><img src="assets/images/wander_above_the_sea.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /><a
-        href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg">
-        <figcaption>Wander Above the Sea of Fog</figcaption>
-      </a></d-figure> -->
-
   <d-article>
     <!-- <a class="marker" href="#section-1" id="section-1"><span>1</span></a> -->
     <d-figure id='genre_proto' style='grid-column: screen; margin: 0rem 2rem;'>
@@ -144,38 +133,51 @@
     </d-figure>
     <script src='assets/js/genre_map.js'></script>
 
-    <h2>Genre Distribution</h2>
-    <!-- <d-figure style="grid-column: middle; margin: 1rem 10rem;"><img src="assets/top_50_genres.png" style="width:100%; height:100%; border: 1px solid rgba(0, 0, 0, 0.2);" />
-      <figcaption>The top 50 genres based on the number of tracks represent by each genre in our dataset.</figcaption>
-    </d-figure> -->
+    <h2>Do "genre-superclusters" exist among the top 50 music genres?</h2>
 
-    <p>
-      In the prelude, I mention that music streaming services upload approximately 50k new tracks every day <d-cite key='ingham_2020'></d-cite>.
+    <p>In the prelude, I mention that music streaming services upload approximately 50k new tracks every day <d-cite key='ingham_2020'></d-cite>.
       Naturally, we might think this would resolve the "stale playlist problem" <d-footnote>
         Have you ever created a playlist you absolutely loved that eventually got boring? If so, then you've experienced the "stale playlist problem".
-        It can occur when you listen to the same tracks you love over and over again, causing your tracks to "go stale".
-        The stale playlist problem is common in the modern music streaming era.</d-footnote>. But, inintuitively, this is not the case: the sheer size of
+        It can occur when you listen to the same tracks you love over and over again, causing your tracks to "go stale". The stale playlist problem is
+        common in the modern music streaming era.</d-footnote>. But, unintuitively, this is not the case: the sheer size of
       music streaming databases can be overwhelming. Where do you begin to look for new artists/albums/tracks without spending a considerable amount of
       time sorting through the noise? Is this even possible? It probably feels like it isn't if you don't know the scope of the music space you're in.
-      This is where "Music Atlas" can be useful: it enables you to visualize the music universe <d-footnote>My hope is that Music Atlas enables you to discover "musical galaxies" that interest you </d-footnote>.
+      This is where "Music Atlas" can be useful: it enables you to visualize the Musical Universe <d-footnote>My hope is that Music Atlas empowers you to discover both new and familiar "music galaxies" that interest you.</d-footnote>.
     </p>
+
+    <p>There is a cosmological theory that the Universe has structure on all scales from moons, planets, and stars, to individual galaxies, to clusters of galaxies, to superclusters, and so on without end <d-footnote>This is actually a theory, not a fact. The theory is called hierarchical cosmology.</d-footnote>.
+      Under this theory, the Musical Universe must have structure on all scales too: from tracks, albums, and artists, to individual "genre galaxies", to clusters of genre galaxies (i.e., "genre galaxy clusters"), to "genre-superclusters", and so on.
+    </p>
+
+    <p>To resolve the stale playlist problem, the first step is get an idea of the scale of the Musical Universe. To this end, I created a map (i.e., force-directed graph) of the largest 50 genre galaxies in the Musical Universe.
+      The map can help us answer the question: do genre-superclusters exist among the top 50 music genres on Spotify? Can you find any?
+    </p>
+
+    <p>Read my answer
+      <d-footnote>Genre-superclusters do appear to exist among the top 50 music genres, and some are more apparent than others.
+        For example, hip hop, gangster rap, trap, and rap may be a genre-supercluster. The same can be said for pop, dance pop, and post-teen pop. I could name several others, but rather than spoiling the fun of discovering the unknown, I'll let you find them yourself.
+      </d-footnote>.
+  </p>
+
+    <h3>How is this map encoded?</h3>
+    <p>Nodes are encoded as circles. Each node is either a track (gray) or genre (colored). For genre nodes, color (ranging sequentially from red-yellow-blue) encodes the number of incoming links (i.e. in degrees). More significant (or connected) genres are more bluish while less significant genres are more redish or yellowish (like how hotter stars emit a bluish color while cooler stars emit a redish or yellowish color).</p>
+
+    <h3>Is the map interactive?</h3>
+    <p>Yes! Hover over any node to see its name and connections. You can also grab (i.e., click and drag) nodes to see how they affect the graph layout.
+      Future releases may incorporate filtering and more details-on-demand. Stay tuned!
+    </p>
+
   </d-article>
 
   <d-appendix>
     <h3>Acknowledgments</h3>
     <p>
-      I am grateful to <a href="https://colah.github.io/">Chris Olah</a> and the rest of the <a href="https://distill.pub/"> Distill Pub</a> team for there insightful blog posts. Also, a big thank you to <a href="https://sjengle.cs.usfca.edu/">Sophie
-        Engle</a> for formally introducing me to data visualization.
+      <a href="https://observablehq.com/@d3/force-directed-graph">Mike Bostock's D3 force-directed graph example</a><br/>
+      <a href="http://bl.ocks.org/sjengle/f6f522f3969752b384cfec5449eacd98">Sophie Engle's Graph Demo's</a><br/>
     </p>
     <h3>Contributions</h3>
     <p>
-      Work was complete by Kai unless noted otherwise.
-    </p>
-    <p>
-      <b>Concepts & Writting:</b> Kai introduced and wrote the central concept and structure of this article.
-    </p>
-    <p>
-      <b>Figures & Code:</b> Some figures were drafted in <a href="rawgraphs.io">RawGraphs</a>. For all figures, the final version was implemented in <a href="https://d3js.org/">D3</a>. All code was written by Kai.
+      All work was complete by Kai unless noted otherwise.
     </p>
     <h3>Reviewers</h3>
     <p>Some text with links describing who reviewed the article.</p>
