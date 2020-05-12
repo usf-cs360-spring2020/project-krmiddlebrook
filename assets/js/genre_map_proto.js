@@ -237,8 +237,8 @@ function updateForces() {
 
   // get each force by name and update the properties
   simulation.force("center")
-    .x(0)
-    .y(0);
+    .x(w * 0.5)
+    .y(h * 0.5);
   simulation.force("charge")
     .strength(forceProperties.charge.strength * forceProperties.charge.enabled)
     .distanceMin(forceProperties.charge.distanceMin)
