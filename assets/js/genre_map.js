@@ -153,11 +153,11 @@ function initializeDisplay(data) {
     .data(graph.links)
     .enter()
     .append('line')
-    .attr('class', 'link')
-    .attr('x1', e => e.source.x)
-    .attr('y1', e => e.source.y)
-    .attr('x2', e => e.target.x)
-    .attr('y2', e => e.target.y);
+      .attr('class', 'link')
+      .attr('x1', e => e.source.x)
+      .attr('y1', e => e.source.y)
+      .attr('x2', e => e.target.x)
+      .attr('y2', e => e.target.y);
   // .style('stroke-width', e => scales.stroke(e.value))
   // .style('stroke', e => scales.color(d3.mean([e.source.katz_centrality, e.target.katz_centrality])));
 
@@ -166,12 +166,12 @@ function initializeDisplay(data) {
     .data(graph.nodes)
     .enter()
     .append('circle')
-    .attr('class', 'node')
-    .attr('r', v => scales.radius(v.degree))
-    .attr('cx', v => v.x)
-    .attr('cy', v => v.y)
-    .attr('fill', v => (v.type === 'genre') ? scales.color(v.degree) : 'gray')
-    .call(drag(simulation));
+      .attr('class', 'node')
+      .attr('r', v => scales.radius(v.degree))
+      .attr('cx', v => v.x)
+      .attr('cy', v => v.y)
+      .attr('fill', v => (v.type === 'genre') ? scales.color(v.degree) : 'gray')
+      .call(drag(simulation));
 
   // setup node tooltips
   setupTooltip(nodes);

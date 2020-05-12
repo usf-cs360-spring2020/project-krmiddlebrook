@@ -123,71 +123,8 @@
   <!-- End page navigation -->
 
   <d-title>
-    <h1 style='text-align: center;'>The Genre Map</h1>
+    <h1 style='text-align: center;'>Coming Soon...</h1>
   </d-title>
-
-  <d-article>
-    <!-- <a class="marker" href="#section-1" id="section-1"><span>1</span></a> -->
-    <d-figure id='genre_proto' style='grid-column: screen; margin: 0rem 2rem;'>
-      <link rel="stylesheet" href='assets/css/genre_map.css'></link>
-      <!-- <div id='genre_proto' style='margin: auto;'>
-      </div> -->
-    </d-figure>
-    <script src='assets/js/genre_map.js'></script>
-    <h2>Do "genre-superclusters" exist among the top 50 music genres?</h2>
-
-    <p>Music streaming services upload approximately 50k new tracks every day <d-cite key='ingham_2020'>!</d-cite>.
-      Naturally, we might think this would resolve the "stale playlist problem" <d-footnote>
-        Have you ever created a playlist you absolutely loved that eventually got boring? If so, then you've experienced the "stale playlist problem".
-        It can occur when you listen to the same tracks you love over and over again, causing your tracks to "go stale". The stale playlist problem is
-        common in the modern music streaming era.</d-footnote>. But, unintuitively, this is not the case: the sheer size of
-      music streaming databases can be overwhelming. Where do you begin to look for new artists/albums/tracks without spending a considerable amount of
-      time sorting through the noise? Is this even possible? It probably feels like it isn't if you don't know the scope of the music space you're in.
-      This is where "Music Atlas" can be useful: it enables you to visualize the Musical Universe <d-footnote>My hope is that Music Atlas empowers you to discover both new and familiar "music galaxies" that interest you.</d-footnote>.
-    </p>
-
-    <p>There is a cosmological theory that the Universe has structure on all scales from moons, planets, and stars, to individual galaxies, to clusters of galaxies, to superclusters, and so on without end <d-footnote>This is actually a theory, not a fact. The theory is called hierarchical cosmology.</d-footnote>.
-      Under this theory, the Musical Universe must have structure on all scales too: from tracks, albums, and artists, to individual "genre galaxies", to clusters of genre galaxies (i.e., "genre galaxy clusters"), to "genre-superclusters", and so on.
-    </p>
-
-    <p>To resolve the stale playlist problem, the first step is get an idea of the scale of the Musical Universe. To this end, I created a map (i.e., force-directed graph) of the largest 50 genre galaxies in the Musical Universe.
-      The map can help us answer the question: do genre-superclusters exist among the top 50 music genres on Spotify? Can you find any?
-    </p>
-
-    <h3>Do genre-supercluster exist?</h3>
-    <p>I don't show my answer by default as I would prefer not to spoil the joy that comes with discovering the unknown yourself. However, if you'd rather read my answer, hover your mouse over the superscript and it will be revealed.
-        <d-footnote>Genre-superclusters do appear to exist among the top 50 music genres, with some superclusters being more pronounced than others!
-        For example, hip hop, gangster rap, trap, and rap look like they form a genre-supercluster. The same can be said for pop, dance pop, and post-teen pop. I see several others, but I omit them here, leaving them for you to discover.
-      </d-footnote>.
-    </p>
-
-    <h3>How is this map encoded?</h3>
-    <p>Nodes represents either a track or a genre. Each node is encoded by three elements: shape, color, size. For the shape encoding, nodes are represented as circles. The color encoding is split into two parts. First, color indicates whether a node is a track (grey) or a genre (colored).
-      For genre nodes, color also encodes the number of incoming links (i.e. in degrees), which can be interpreted as measuring the connectedness or influence of genres. More connected genres have cooler colors (i.e., blues) while less connected have warmer colors (just like how hotter stars emit a bluish color while cooler stars emit a redish or yellowish color).
-      For both genre and track nodes, size indicates the influence of each node. Links between nodes are encoded by lines.
-    </p>
-      <!-- TODO: add katz centrality encoding. In graph theory, the Katz centrality of a node is a measure of centrality in a network. It was introduced by Leo Katz in 1953 and is used to measure the relative degree of influence of an actor (or node) within a social network. Unlike typical centrality measures which consider only the shortest path (the geodesic) between a pair of actors, Katz centrality measures influence by taking into account the total number of walks between a pair of actors. -->
-
-    <h3>Is the map interactive?</h3>
-    <p>Yes! Hover over any node to see its name and connections. You can also grab (i.e., click and drag) nodes to see how they affect the graph layout.
-      Future releases may incorporate filtering and more details-on-demand. Stay tuned!
-    </p>
-
-  </d-article>
-
-  <d-appendix>
-    <h3>Acknowledgments</h3>
-    <p>
-      <a href="https://observablehq.com/@d3/force-directed-graph">Mike Bostock's D3 force-directed graph example</a><br/>
-      <a href="http://bl.ocks.org/sjengle/f6f522f3969752b384cfec5449eacd98">Sophie Engle's Graph Demo's</a><br/>
-      <a href="https://www.twosixlabs.com/faster-force-directed-graph-layouts-by-reusing-force-approximations/">d3-force-reuse</a>
-    </p>
-    <h3>Contributions</h3>
-    <p>
-      All work was complete by Kai unless noted otherwise.
-    </p>
-    <d-bibliography src="bibliography.bib"></d-bibliography>
-  </d-appendix>
 
   <footer class="footer">
     <div class="content has-text-centered is-size-7">

@@ -167,6 +167,14 @@
       Future releases may incorporate filtering and more details-on-demand. Stay tuned!
     </p>
 
+    <!-- <h3>Feedback Recieved and Future Work</h3>
+    <p>One reviewer reported that the graph did not render when they tried to view it. I suspect this was not a bug but rather caused by the large size of the data, causing the view to leave the page before the graph finished rendering.
+      D3's force-directed-graph function is computationally expensive (particularly when large data is used) because node positions are recalulated every clock tick.
+      To this end, I asked if there were any methods that could speed up the rendering time without compromising position quality in the graph. Professor Engle suggested
+      <a href="https://www.twosixlabs.com/faster-force-directed-graph-layouts-by-reusing-force-approximations/">d3-force-reuse</a>, which I integrated into my final visualization.
+      The improvement is made by approximating the Barnes-Hut values. It does this by reusing approximations instead of computing new ones at each iteration of the layout algorithm.
+    </p> -->
+
   </d-article>
 
   <d-appendix>
@@ -179,8 +187,13 @@
     <p>
       All work was complete by Kai unless noted otherwise.
     </p>
-    <h3>Reviewers</h3>
-    <p>Some text with links describing who reviewed the article.</p>
+    <h3>Feedback Recieved and Future Work</h3>
+    <p>One reviewer reported that the graph did not render when they tried to view it. I suspect this was not a bug but rather caused by the large size of the data, causing the view to leave the page before the graph finished rendering.
+      D3's force-directed-graph function is computationally expensive (particularly when large data is used) because node positions are recalulated every clock tick.
+      To this end, I asked if there were any methods that could speed up the rendering time without compromising position quality in the graph. Professor Engle suggested
+      <a href="https://www.twosixlabs.com/faster-force-directed-graph-layouts-by-reusing-force-approximations/">d3-force-reuse</a>, which I integrated into my final visualization.
+      The improvement is made by approximating the Barnes-Hut values. It does this by reusing approximations instead of computing new ones at each iteration of the layout algorithm.
+    </p>
 
     <d-bibliography src="bibliography.bib"></d-bibliography>
   </d-appendix>
