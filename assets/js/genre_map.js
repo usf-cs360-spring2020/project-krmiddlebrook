@@ -39,23 +39,23 @@ const forceProperties = {
   },
   charge: {
     enabled: true,
-    strength: -30,
+    strength: -20,
     distanceMin: 1,
-    distanceMax: 200
+    distanceMax: 100
   },
   collide: {
-    enabled: true,
+    enabled: false,
     strength: .5,
     iterations: 1,
     radius: 5
   },
   forceX: {
-    enabled: true,
+    enabled: false,
     strength: .1,
     x: .5
   },
   forceY: {
-    enabled: true,
+    enabled: false,
     strength: .1,
     y: .5
   },
@@ -86,7 +86,7 @@ function initializeDisplay(data) {
   graph = data;
 
   // shift plot so (0, 0) is in center
-  // g.plot.attr('transform', `translate(${w*0.5}, ${h*0.5})`);
+  g.plot.attr('transform', `translate(${w*0.5}, ${h*0.5})`);
 
   // place links underneath nodes
   g.links = g.plot.append('g').attr('id', 'links');
@@ -111,7 +111,7 @@ function initializeDisplay(data) {
   // set up simulation forces with default values
   simulation.nodes(graph.nodes)
     .force('link', d3.forceLink(graph.links).id(d => d.id))
-    .force('center', d3.forceCenter(w * 0.5, h * 0.5));
+    .force('center', d3.forceCenter());
 
   simulation.force('forceX', d3.forceX()
     .strength(forceProperties.forceX.strength * forceProperties.forceX.enabled)
@@ -121,10 +121,10 @@ function initializeDisplay(data) {
     .strength(forceProperties.forceY.strength * forceProperties.forceY.enabled)
     .y(h * forceProperties.forceY.y));
 
-  simulation.force('collide', d3.forceCollide());
+  // simulation.force('collide', d3.forceCollide());
 
   simulation
-    .force('charge', d3.forceManyBody()
+    .force('charge', d3.forceManyBodyReuse()
       .strength(forceProperties.charge.strength * forceProperties.charge.enabled)
       .distanceMin(forceProperties.charge.distanceMin)
       .distanceMax(forceProperties.charge.distanceMax));
@@ -233,7 +233,7 @@ function ticked() {
 // https://blockbuilder.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
 function updateForces() {
   // shift plot so (0, 0) is in center
-  // g.plot.attr('transform', `translate(${w*0.5}, ${h*0.5})`);
+  g.plot.attr('transform', `translate(${w*0.5}, ${h*0.5})`);
 
   // get each force by name and update the properties
   simulation.force("center")
@@ -262,6 +262,8 @@ function updateForces() {
   // restarts the simulation (important if simulation has already slowed down)
   simulation.alpha(1).restart();
 }
+
+setTimeout(function() {simulation.stop(); }, 10000*10);
 
 // update size-related forces
 d3.select(window).on("resize", function() {
